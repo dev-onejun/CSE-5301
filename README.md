@@ -11,6 +11,10 @@ Fall 2024, Computer Science and Engineering Department, The University of Texas 
 * Graduate Teaching Assistant (GTA): Akshay Basavalingaiah
     - axb6287 at mavs dot uta dot edu
 
+## Expectation
+
+Probbility and statistics
+
 ### Study Materials
 
 (Recommended)
