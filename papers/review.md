@@ -14,6 +14,10 @@ $$
 \mathbf{\text{Acronym and Abbreviation}} \\
 \begin{array}{|c|c|}
 \hline
+\text{Probability Mass Function (PMF)} & \text{Cumulative Mass Function (CMF)} \\
+\hline
+\text{Probability Density Function (PDF)} & \text{Cumulative Density Function (CDF)} \\
+\hline
 \text{} & \text{} \\
 \hline
 \text{} & \text{} \\
@@ -68,3 +72,67 @@ $$
 \hline
 \end{array}
 $$
+
+**Random Experiments**
+
+A *random experiment* is a process that a result occurs uncertainly. Observing with the random experiment, all possible outcomes can be observed. These outcomes are called as the *sample space*. In other words, the *sample space* becomes *universal set* in the context of a *random experiment*. Take a fair coin for example. If a coin were flipped, the possible results of the flip are head and tail so that *sample space*, a *universal set* $S$, is $\{H, T \}$.
+
+A subset of *sample space* is called an *event*. With this definition about *event*, the probability of the event can be calculated. Likewise with the example of the fair coin, a *event* $A$ can be defined as the result of the flip is head. In this case, the probability of the event $P(A)$ is $1 \over 2$.
+
+**Random Variables**
+
+*Random Variables* are informally defined as a quantity or object which depends on *random experiments*. For instance, a *random variable* $A$ can be defined as "True, if a randomly drawn person from our class is female."
+
+Normally, *random variables* are categorized as four types: **1)** *Propositional* random variables, **2)** *Multivalued* random variables, **3)** *Discrete Real-valued* random variables, and **4)** *Continuous Real-valued* random variables.
+
+*Propositional* random variables are the simplest type of *random variables*. It is defined as a *random variable* that can take only two values, true or false. For instance, whether a person is a girl or male is a *propositional* random variable. This boolean type of *random variable* follows the axioms below.
+
+$$
+P(A) \in [0, 1] \\
+P(\text{true}) = 1, P(\text{false}) = 0 \\
+P(A \cup B) = P(A) + P(B) - P(A \cap B) \\
+P(A \cap B) = P(A) \cdot P(B|A) \\
+P(A) + P(\neg A) = 1
+$$
+
+*Multivalued* random variables are the *random variables* that can take more than two values. For example, the result of a dice roll is a *multivalued* random variable. The probability of the event that the result of the dice roll is 1 is $P(A) = {1 \over 6}$. The axioms of *multivalued* random variables are as follows.
+
+$$
+P(A = a_i) \in [0, 1] \\
+P(S) = 1, P(\emptyset) = 0 \\
+P(A \cup B) = P(A) + P(B) - P(A \cap B) \\
+P(A \cap B) = P(A) \cdot P(B|A) \\
+\sum_{i=1}^{n} P(A = a_i) = 1
+$$
+
+*Discrete (Real-valued)* random variables are the *random variables* that can take countable number of values. For example, the number of students in a class is a *discrete real-valued* random variable.
+*PMF* is a function, used in *discrete* random variables, which maps the probability of each value. $RX$ is a countable set of values that the *discrete* random variable can take. The definition of the PMF is
+
+$$
+\begin{array}{c|cc}
+px(x) = & P(X = x), & \text{if x in RX} \\
+& 0, & \text{otherwise}
+\end{array}
+$$
+
+![img](https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Discrete_probability_distrib.svg/2880px-Discrete_probability_distrib.svg.png)
+$\text{Fig 1. An example of PMF [}\href{#mjx-eqn-1}{1} \text{]}$
+
+*Continuous (Real-valued)* random variables are the *random variables* that can take infinitely many values. For example, the height of a person is a *continuous real-valued* random variable. The one thing that needs to be cautious is that the probability of a single value in a *continuous* random variable is zero. For instance, if a *continuous* random variable $X \in [0, 10]$, uniformly distributed, the probability of the event $P(X = 5)$ is zero.
+
+*CMF* is a function, used in *continuous* random variables, which maps the probability of the event that the random variable is less than or equal to a certain values. The function is defined as $CMF(x) = P(X \le x)$.
+*PDF* is used to specify the probability of the *random variables* falling within a particular range of values. This probability is given by the integral of these variables over the range. In other words, the area under the density function but above the horizontal axis and between the lowest and the greatest variable values is the probability of the random variable.
+
+![img](https://upload.wikimedia.org/wikipedia/commons/4/4f/4_continuous_probability_density_functions.png)
+$\text{Fig 2. An Example of Four Continuous PDF functions [} \href{#mjx-eqn-2}{2} \text{]}$
+
+*CDF* is a function, used in *continuous* random variables, which maps the probability of the event that the random variable is less than or equal to a certain values. The function is defined as $F(x) = P(X \le x)$.
+
+**Axioms of Probability**
+
+With the definition of *random experiments* and *random variables*, three *axioms of probability* can be defined as follows: **1)** For any event $A$, $P(A) \ge 0$. **2)** The probability of the sample space $P(S)$ is always $1$. **3)** For disjoint events greater than or equal to 2, the probability of the union of these events is equal to the sum of the probabilities of these events. $P(A_1 \cup A_2 \cup \cdots) = P(A_1) + P(A_2) + \cdots$
+
+#### References
+
+[1] "Probability mass function", Wikipedia, [Online] Available: https://en.wikipedia.org/wiki/Probability_mass_function, accessed in Aug. 28th, 2024. \
+[2] "Probability density function", Wikipedia, [Online] Available: https://en.wikipedia.org/wiki/Probability_density_function, accessed in Aug. 28th, 2024.
