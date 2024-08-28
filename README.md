@@ -29,7 +29,7 @@ Probbility and statistics
 * 2$^\text{st}$ Exam: **40%**
 * Homeworks: **20%**
 
-|A|B|C|D|E|
+|A|B|C|D|F|
 |-|-|-|-|-|
 |90-100%|80-89%|70-79%|60-69%|0-60%|
 
