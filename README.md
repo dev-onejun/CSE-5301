@@ -1,4 +1,4 @@
-# CSE 5311: DESIGN & ANALYSIS OF ALGORITHM
+# CSE 5301: DATA ANALYSIS & MODELING TECHNIQUES
 
 Fall 2024, Computer Science and Engineering Department, The University of Texas at Arlington
 
