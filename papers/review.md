@@ -29,7 +29,7 @@ $$
 
 #### II. Literature Review
 
-**Basic Definition of Probability**
+##### A. Basic Definition of Probability
 
 Probability is observed as randomness and uncertainty in daily lives. *Relative Frequency* refers to the ratio of how often an event occurs relative to the total number of trials. However, situations occured in everyday seem that probabilities observed from *Relative Frequency* are not matched with the common sense. For example, two coins continously flipped are not always (Head, Tail) or (Tail, Head). *The law of large numbers* demonstrates that if the number of trials become higher, *Relative Frequency* will converge to this common sense. The probability of the flipped coin is $1 \over 2$ so that the result, flipped 100 times, may become 50 Head and 50 Tail.
 
@@ -117,7 +117,7 @@ $\text{Fig 1. An example of PMF [}\href{#mjx-eqn-1}{1} \text{]}$
 *Continuous (Real-valued)* random variables are the *random variables* that can take infinitely many values. For example, the height of a person is a *continuous real-valued* random variable. The one thing that needs to be cautious is that the probability of a single value in a *continuous* random variable is zero. For instance, if a *continuous* random variable $X \in [0, 10]$, uniformly distributed, the probability of the event $P(X = 5)$ is zero.
 
 *CMF* is a function, used in *random variables*, which maps the probability of the event that the random variable is less than or equal to a certain values. The function is defined as $CMF(x) = P(X \le x)$.
-*PDF* is used to specify the probability of the *continuous random variables* falling within a particular range of values. This probability is given by the integral of these variables over the range. In other words, the area under the density function but above the horizontal axis and between the lowest and the greatest variable values is the probability of the random variable.
+*PDF* is used to specify the probability of the *continuous random variables* falling within a particular range of values. This probability is given by the integral of these variables over the range. In other words, the area under the density function but above the horizontal axis and between the lowest and the greatest variable values is the probability of the random variable. The valid *PDF* must satisfy the following conditions: **1)** $f(x) \ge 0$ for all $x$. **2)** $\int_{-\infty}^{\infty} f(x) dx = 1$.
 
 ![img](https://upload.wikimedia.org/wikipedia/commons/4/4f/4_continuous_probability_density_functions.png)
 $\text{Fig 2. An Example of Four Continuous PDF functions [} \href{#mjx-eqn-2}{2} \text{]}$
@@ -139,18 +139,80 @@ Two events $A$ and $B$ are independent if $P(A \cap B) = P(A)P(B)$. In other wor
 
 *Marginalization* is the process of obtaining the probability of a event by summing over all the possible values of the other event. For instance, the probability of selecting a black card is $P(\text{Black}) = P(\text{Black} \cap \text{Spade}) + P(\text{Black} \cap \text{Club}) = \frac{13}{52} + \frac{13}{52} = \frac{26}{52} = \frac{1}{2}$.
 
-**Bayes Theorem**
+##### B. Bayes Theorem
 
-*Bayes Theorem*, alternatively known as *Bayes'rule* or *Bayes' law*, is a formula that describes how to derive the probability of a hypothesis given the evidence. The formula is driven from the definition of *Conditional Probability*. The formula is given by
+*Bayes Theorem*, alternatively known as *Bayes'rule* or *Bayes' law*, is a formula that describes how to derive the probability of a hypothesis given the evidence. The formula is driven from the definition of *Conditional Probability* and given by
 
 $$
 P(A|B) = \frac{P(B|A)P(A)}{P(B)}
 $$
 
+##### C. Probability Distributions
+
+*Probability Distributions* are the mathematical functions that provide the probabilities of occurrence of different possible outcomes in an experiment. *Probability Distributions* are categorized as **1)** *Discrete Probability Distributions* and **2)** *Continuous Probability Distributions*. *Discrete Probability Distributions*, known as PMF, are the distributions that can take only countable values. *Continuous Probability Distributions*, known as PDF, are the distributions that can take infinitely many values.
+
+*Univariate Distributions* in *Probability Distributions*, unlike *Multivariate Distributions* which have more than one random variable, refers to the distribution that has only one random variable. the binomial distribution, the hypergeometric distribution, the normal distribution are the examples of *Univariate Distributions*. The multivariate normal distribution is a commonly encountered in *Multivariate Distributions*. For the summary simplification, the *Univariate Distributions* are discussed in this review.
+
+*Mean* is the first moment of a distribution, which is the average value of the distribution and is denoted by $E(X)$ or $\mu$. *Variance* is the second moment of a distribution, which is the measure of the spread of the distribution and is denoted by $Var(X)$. *Standard Deviation* is the square root of the variance and is denoted by $SD(X)$ or $\sigma_x$. In **1)** *Discrete Probability Distributions*, the formulas of *Mean*, *Variance*, and *Standard Deviation* are given by
+
+$$
+\begin{array}{|ccc|}
+\hline
+E(X) & = & \sum_{i=1}^{n} x_i \cdot p(x_i) \\
+\hline
+Var(X) & = & E[(X - \mu)^2] \\
+& = & E(X^2) - E(X)^2 & \cdots (1)\\
+\hline
+SD(X) & = & \sqrt{Var(X)} \\
+\hline
+\end{array}
+$$
+
+*Mean* is not enough to describe the distribution. Consider two random variables $X$ and $Y$ with the same mean. The distribution of $X$ can be more spread out than the distribution of $Y$. *Variance* is used to measure the spread of the distribution so that most moments of the distribution are utilized both *Mean* and *Variance* to describe the distribution. *Variance* is always non-negative, larger than or equal to zero, since it is the square of the difference between the *random variable* and the *mean*. The bigger the *Variance*, the more spread out the distribution is from the *mean* as well as the smaller the *Variance*, the more concentrated the distribution is around the *mean*.
+
+The proof of the formula $(1)$ is as follows;
+
+$$
+\begin{array}{rcl}
+Var(X) & = & E[(X - \mu)^2] \\
+& = & E(X^2 - 2X\mu + \mu^2) \\
+& = & E(X^2) - 2E(X)\mu + \mu^2 \\
+& = & E(X^2) - 2\mu^2 + \mu^2 \\
+& = & E(X^2) - \mu^2 \\
+& = & E(X^2) - E(X)^2
+\end{array}
+$$
+
+In **2)** *Continuous Probability Distributions*, the summation and the PMFs, in the formulas of *Mean*, *Variance*, and *Standard Deviation* above, are replaced by the integrals and the PDFs. The formula are given by
+
+$$
+\begin{array}{|ccc|}
+\hline
+E(X) & = & \int_{-\infty}^{\infty} x \cdot f(x) dx \\
+\hline
+Var(X) & = & \int_{-\infty}^{\infty} (x - \mu)^2 \cdot f(x) \; dx \\
+& = & \int_{-\infty}^{\infty} x^2 \cdot f(x) \; dx - \mu^2 \\
+\hline
+SD(X) & = & \sqrt{Var(X)} \\
+\hline
+\end{array}
+$$
+
+*Median* is the value that separates the higher half from the lower half of the data. It gives the advantage compared to the *Mean* that it is not affected by the outliers so that it may be more robust value to describe the distribution. If the number of the data is odd, the median is the middle value. If the number of the data is even, the median is the average of the two middle values. *Mode* is the value that appears most frequently in the data. The distribution can have more than one mode, not necessarily unique since the distribution can have more than one peak. The one peak distribution is called *Unimodal*, the two peak distribution is called *Bimodal*, and the more than two peak distribution is called *Multimodal*.
+
+|![Visualization of Mean, Median, and Mode](https://upload.wikimedia.org/wikipedia/commons/3/33/Visualisation_mode_median_mean.svg)|
+|-|
+|$\text{Fig 3. Geometric visualization of Mean, Median, and Mode in distributions}$|
+
+In symmetric unimodal distributions, the *Mean*, *Median*, and *Mode* are the same ($\text{Mean} = \text{Median} = \text{Mode}$). In the right-skewed distribution, the *Mean* is greater than the *Median*, and the *Median* is greater than the *Mode* ($\text{Mode} \lt \text{Median} \lt \text{Mean}$). In the left-skewed distribution, the *Mean* is less than the *Median*, and the *Median* is less than the *Mode* ($\text{Mode} \gt \text{Median} \gt \text{Mean}$).
 
 #### References
 
 [1] "Probability mass function", Wikipedia, [Online] Available: https://en.wikipedia.org/wiki/Probability_mass_function, accessed in Aug. 28th, 2024. \
 [2] "Probability density function", Wikipedia, [Online] Available: https://en.wikipedia.org/wiki/Probability_density_function, accessed in Aug. 28th, 2024.
+
+#### Appendix
+
+##### Practices
 
 
