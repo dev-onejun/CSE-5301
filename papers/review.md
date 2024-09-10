@@ -1,3 +1,7 @@
+---
+usemathjax: true
+---
+
 # What Something Exists in Everyday Life: A Review of Probability and Statistics
 
 $$
