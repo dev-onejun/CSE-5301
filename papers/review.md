@@ -254,7 +254,7 @@ The Poisson Distribution is used in the number of phone calls received by a call
 $$
 \begin{array}{c|ccc}
 & \text{Mean} & = & \frac{nK}{N} \\
-P(X = k) = \frac{{K \choose k} {N-K \choose n-k}}{{N \choose n}} & \text{Variance} & = & n \frac{K}{N} \frac{N-K}{N} \frac{N-n}{N-1} \\
+P(X = k) = \frac{ {K \choose k} {N-K \choose n-k} }{ {N \choose n} } & \text{Variance} & = & n \frac{K}{N} \frac{N-K}{N} \frac{N-n}{N-1} \\
 & \text{Standard Deviation} & = & \sqrt{n \frac{K}{N} \frac{N-K}{N} \frac{N-n}{N-1}}
 \end{array}
 $$
