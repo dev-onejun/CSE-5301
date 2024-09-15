@@ -1,7 +1,3 @@
----
-usemathjax: true
----
-
 # What Something Exists in Everyday Life: A Review of Probability and Statistics
 
 $$
@@ -55,7 +51,7 @@ $$
 
 Four *Set Operations* is enabled to *Set theory*; **1) Union** is a operation that makes a combined set from the targeted two sets without duplication. For instance, $A = \{1, 2\}, B = \{2, 3\} \to A \cup B = \{1, 2, 3\}$. **2) Intersection** emits a set which contains the only duplicated elements between the two sets. From the previous example, $A \cap B = \{ 2\}$. **3) Complement**, marked as $A^c$ or $\bar{A}$, derives a set which everything in $S$ but not in the set. **4) Difference** produces a set everything in the original set, but not in the minus set. Likewise with the above example, $A - B = A \cap B^c = \{ 1\}$.
 
-*Cardinality* $|A|$ means the size of the set. If the set $A$ has its elements $\{2,4,6,8,10\}$, the value $|A| = 5$.
+*Cardinality* $| A |$ means the size of the set. If the set $A$ has its elements $\{2,4,6,8,10\}$, the value $| A | = 5$.
 
 With these definition, three following rules are derived;
 
@@ -130,7 +126,7 @@ $\text{Fig 2. An Example of Four Continuous PDF functions [} \href{#mjx-eqn-2}{2
 
 With the definition of *random experiments* and *random variables*, three *axioms of probability* can be defined as follows: **1)** For any event $A$, $P(A) \ge 0$. **2)** The probability of the sample space $P(S)$ is always $1$. **3)** For disjoint events greater than or equal to 2, the probability of the union of these events is equal to the sum of the probabilities of these events. $P(A_1 \cup A_2 \cup \cdots) = P(A_1) + P(A_2) + \cdots$
 
-*Conditional Probability* refers to the probability which has been considered after certain observations or facts. For instance, in poker cards, if a selected card were a black, then what is the probability of the card being a spade? The probability of the card being a spade is the *Conditional Probability*, and the answer is $P(\text{Spade}|\text{Black}) = \frac{13}{26} = \frac{1}{2}$. The formula for *Conditional Probability* is given by
+*Conditional Probability* refers to the probability which has been considered after certain observations or facts. For instance, in poker cards, if a selected card were a black, then what is the probability of the card being a spade? The probability of the card being a spade is the *Conditional Probability*, and the answer is $P(\text{Spade} | \text{Black}) = \frac{13}{26} = \frac{1}{2}$. The formula for *Conditional Probability* is given by
 
 $$
 P(A|B) = \frac{P(A \cap B)}{P(B)} \\
@@ -205,15 +201,170 @@ $$
 *Median* is the value that separates the higher half from the lower half of the data. It gives the advantage compared to the *Mean* that it is not affected by the outliers so that it may be more robust value to describe the distribution. If the number of the data is odd, the median is the middle value. If the number of the data is even, the median is the average of the two middle values. *Mode* is the value that appears most frequently in the data. The distribution can have more than one mode, not necessarily unique since the distribution can have more than one peak. The one peak distribution is called *Unimodal*, the two peak distribution is called *Bimodal*, and the more than two peak distribution is called *Multimodal*.
 
 |![Visualization of Mean, Median, and Mode](https://upload.wikimedia.org/wikipedia/commons/3/33/Visualisation_mode_median_mean.svg)|
-|-|
-|$\text{Fig 3. Geometric visualization of Mean, Median, and Mode in distributions}$|
+|:--:|
+
+$\text{Fig 3. Geometric visualization of Mean, Median, and Mode in distributions}$
 
 In symmetric unimodal distributions, the *Mean*, *Median*, and *Mode* are the same ($\text{Mean} = \text{Median} = \text{Mode}$). In the right-skewed distribution, the *Mean* is greater than the *Median*, and the *Median* is greater than the *Mode* ($\text{Mode} \lt \text{Median} \lt \text{Mean}$). In the left-skewed distribution, the *Mean* is less than the *Median*, and the *Median* is less than the *Mode* ($\text{Mode} \gt \text{Median} \gt \text{Mean}$).
 
+##### D. Discrete Probability Distributions
+
+Five discrete probability distributions are tackled in this review: **1)** **Binominal Distribution**, **2)** **Discrete Uniform Distribution**, **3)** **Poisson Distributions**, **4)** **Hypergeometric Distribution**, and **5)** **Geometric Distribution**.
+
+**1) Binomial Distribution** is a distribution that describes the number of successes in a sequence of $n$ independent experiments. The distribution is characterized by two parameters: **1)** the number of trials $n$ and **2)** the probability of success $p$. The formula of the PMF of the Binomial Distribution is given by
+
+$$
+\begin{array}{c|ccc}
+& \text{Mean} & = & np \\
+P(X = k) = {n \choose k} p^k (1-p)^{n-k} & \text{Variance} & = & np(1-p) \\
+& \text{Standard Deviation} & = & \sqrt{np(1-p)}
+\end{array}
+$$
+
+where ${n \choose k} = \frac{n!}{k!(n-k)!}$ is the binomial coefficient. A coin tossed 5 times, A die rolled 25 times, and 50 chickens eggs examined are the examples of the Binomial Distribution.
+
+The important thing is that the Binominal Distribution does not consider the order of the successes. The distribution that the order of the successes is considered is Geometric Distribution (5).
+
+**2) Discrete Uniform Distribution** is a distribution that describes the probability of each value in the distribution is the same. The formula of the PMF of the Discrete Uniform Distribution is given by
+
+$$
+\begin{array}{c|ccc}
+& \text{Mean} & = & \frac{a+b}{2} \\
+P(X = k) = {1 \over n} \quad (k=[a,b], \; n=b-a+1)& \text{Variance} & = & \frac{n^2 - 1}{12} \\
+& \text{Standard Deviation} & = & \sqrt{\frac{n^2 - 1}{12}}
+\end{array}
+$$
+
+where $a$ and $b$ are the minimum and the maximum values of the distribution. The examples of the Discrete Uniform Distribution are the roll of a fair die, the selection of a card from a deck of cards, and the selection of a number from a set of numbers.
+
+**3) Poisson Distribution** is a distribution that describes the number of events occurring in a fixed interval of time or space. The distribution is characterized by one parameter: the average number of events $\lambda$. The formula of the PMF of the Poisson Distribution is given by
+
+$$
+\begin{array}{c|ccc}
+& \text{Mean} & = & \lambda \\
+P(X = k) = \frac{e^{-\lambda} \lambda^k}{k!} & \text{Variance} & = & \lambda \\
+& \text{Standard Deviation} & = & \sqrt{\lambda}
+\end{array}
+$$
+
+The Poisson Distribution is used in the number of phone calls received by a call center in an hour, the number of emails received in a day, and the number of customers arriving at a store in an hour. The Poisson Distribution is a special case of the Binomial Distribution when the number of trials $n$ is large and the probability of success $p$ is small.
+
+**4) Hypergeometric Distribution** is a distribution that describes the number of successes in a sequence of $n$ draws without replacement from a finite population of size $N$ that contains $K$ successes. The distribution is characterized by three parameters: the population size $N$, the number of available successes in the population $K$, the number of draws $n$, and the number of observed (curious) success $k$. The formula of the PMF of the Hypergeometric Distribution is given by
+
+$$
+\begin{array}{c|ccc}
+& \text{Mean} & = & \frac{nK}{N} \\
+P(X = k) = \frac{{K \choose k} {N-K \choose n-k}}{{N \choose n}} & \text{Variance} & = & n \frac{K}{N} \frac{N-K}{N} \frac{N-n}{N-1} \\
+& \text{Standard Deviation} & = & \sqrt{n \frac{K}{N} \frac{N-K}{N} \frac{N-n}{N-1}}
+\end{array}
+$$
+
+The distribution is simply considered as the probability of the possible cases with the combinations without replacements.
+
+Finally, **5) Geometric Distribution** is a distribution that describes the number of trials needed to get the first success in a sequence of independent experiments. The distribution is characterized by one parameter: the probability of success $p$. The formula of the Geometric Distribution PMF is given by
+
+$$
+\begin{array}{c|ccc}
+& \text{Mean} & = & \frac{1}{p} \\
+P(X = k) = (1-p)^{k-1} p & \text{Variance} & = & \frac{1-p}{p^2} \\
+& \text{Standard Deviation} & = & \sqrt{\frac{1-p}{p^2}}
+\end{array}
+$$
+
+##### E. Continuous Probability Distributions
+
+Four continuous probability distributions are addressed in this review: **1)** **Normal(Gaussian) Distribution**, **2)** **Exponential Distribution**, **3)** **Continuous Uniform Distribution**, and **4)** **Gamma Distribution**.
+
+**1) Normal(Gaussian) Distribution** is a distribution that describes the probability of the continuous random variable whose distribution is symmetric and bell-shaped. The distribution is characterized by two parameters: the mean $\mu$ and the standard deviation $\sigma$. The formula of the Normal Distribution PDF is given by
+
+$$
+f(x) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+$$
+
+68% of the data falls within one standard deviation of the mean, 95% of the data falls within two standard deviations of the mean, and 99.7% of the data falls within three standard deviations of the mean.
+
+The standard normal distribution, also known as Bell Curve, is a special case of the normal distribution when the mean $\mu = 0$ and the standard deviation $\sigma = 1$. The PDF of the standard normal distribution is always $f(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}$. The standard normal distribution is also used to calculate the z-score, which is the number of standard deviations a data point is from the mean. The z-score is calculated by $z = \frac{x - \mu}{\sigma}$. The standardization of the normal distribution is helpful to compare the data points among different normal distributions.
+
+**2) Exponential Distribution** is a distribution that explains the waiting time between events in a process that occurs continuously and independently at a constant average rate. The distribution is characterized by one parameter: the rate parameter $\lambda$. The formula of the Exponential Distribution PDF and CDF are given by (CDF is an integral of PDF)
+
+$$
+\begin{array}{c|c}
+\text{PDF} & \text{CDF} \\
+\hline
+f(x; \lambda) = \begin{cases}
+\lambda e^{-\lambda x} & \text{if } x \ge 0 \\
+0 & \text{if } x < 0
+\end{cases} & F(x; \lambda) = \begin{cases}
+1 - e^{-\lambda x} & \text{if } x \ge 0 \\
+0 & \text{if } x < 0
+\end{cases}
+\end{array} \\
+\\
+(\text{Mean} = \frac{1}{\lambda} \quad \text{Variance} = \frac{1}{\lambda^2} \quad \text{Standard Deviation} = \frac{1}{\lambda})
+$$
+
+The moment of Mean means that if the number of the trials is $\lambda$, the average waiting time between each trial is $\frac{1}{\lambda}$. For instance, if the bus arrives at the bus stop 2 times per hour, the average waiting time for the bus is $\frac{1}{2} = 0.5$ hour. This concept is similar to the Poisson Distribution.
+
+**3) Continuous Uniform Distribution** is a distribution that tells the probability of the continuous random variable whose distribution is uniform. The distribution is characterized by two parameters: the minimum value $a$ and the maximum value $b$. The PDF and CDF of the Continuous Uniform Distribution are given by
+
+$$
+\begin{array}{c|c}
+\text{PDF} & \text{CDF} \\
+\hline
+f(x; a, b) = \begin{cases}
+\frac{1}{b-a} & \text{if } a \le x \le b \\
+0 & \text{otherwise}
+\end{cases} & F(x; a, b) = \begin{cases}
+0 & \text{if } x < a \\
+\frac{x-a}{b-a} & \text{if } a \le x \le b \\
+1 & \text{if } x > b
+\end{cases}
+\end{array} \\
+\\
+(\text{Mean} = \frac{a+b}{2} \quad \text{Variance} = \frac{(b-a)^2}{12} \quad \text{Standard Deviation} = \frac{b-a}{\sqrt{12}})
+$$
+
+**4) Gamma Distributions**
+
+The gamma distribution is a two-parameter family of continuous probability distributions, particularly useful when dealing with waiting times. The gamma distribution is a generalization of the exponential distribution. In other words, they have same purpose, to predict the wait time until future events, but while the exponential distribution predicts the wait time until the first event, the gamma distribution predicts the wait time until the k-th event.
+
+In order to define the gamma distribution, the gamma function is priorly needed. The gamma function $\Gamma(x)$ is defined with the following five characteristics for any positive real number $\alpha$:
+
+$\text{1. } \Gamma(\alpha) = \int_{0}^{\infty} x^{\alpha-1}e^{-x}dx, \quad \alpha > 0$ \
+$\text{2. } \int_{0}^{\infty} x^{\alpha-1}e^{\lambda x}dx = \frac{\Gamma(\alpha)}{\lambda^{\alpha}}, \quad \alpha > 0, \lambda > 0$ \
+$\text{3. } \Gamma(\alpha+1) = \alpha\Gamma(\alpha), \quad \alpha > 0$ \
+$\text{4. } \Gamma(n) = (n-1)!, \quad n \in \mathbb{N}$ \
+$\text{5. } \Gamma\left(\frac{1}{2}\right) = \sqrt{\pi}$
+
+With these characteristics, the gamma distribution, $X$~Gamma($\alpha$, $\lambda$) followed by a continuous random variable $X$ with parameters $\alpha \gt 0$ and $\lambda \gt 0$, is defined as follows:
+
+$$
+f(x) = \begin{cases}
+\frac{\lambda^\alpha x^{\alpha-1} e^{-\lambda x}}{\Gamma(\alpha)}, & x > 0 \\
+0, & \text{otherwise}
+\end{cases}
+$$
+
+The specific case, Exponential Distribution, can be checked by setting $\alpha = 1 \rightarrow f(x) = \lambda e^{-\lambda x}$. In other words, Gamma(1, $\lambda$) = Exponential($\lambda$).
+
+The moments of the gamma distribution are as follows:
+
+$\text{1. } E(X) = \frac{\alpha}{\lambda}$ \
+$\text{2. } Var(X) = \frac{\alpha}{\lambda^2}$ \
+$\text{3. } SD(X) = \sqrt{\frac{\alpha}{\lambda^2}}$
+
+##### F. Joint Distributions
+
+Joint distributions are used to describe the probability of two or more random variables simultaneously. The PMF of joint distribution is defined as $P(x, y) = P(X = x, Y = y) = P((X = x) \text{ and } (Y = y)$.
+
+For two discrete random variables $X$ and $Y$ which the sum of their probabilities is equal to 1, the joint PMF is written as $P(x, y) = P(X = x, Y = y) = P((X = x) \cap P(Y = y))$.
+
+Marginal PMF is the probability of a single random variable without considering the other random variable. The marginal PMF of $X$ is defined as $P(x) = P(X = x) = \sum_{y_i \in R_Y} P(x_i, y_i)$ and the marginal PMF of $Y$ is defined as $P(y) = P(Y = y) = \sum_{x_i \in R_X} P(x_i, y_i)$. In order to $X$ and $Y$ are independent, the independent condition $P(x, y) = P(x)P(y)$ must be satisfied in all $x$ and $y$ cases. For instance, if two discrete random variables $X \in \{1, 2\}$ and $Y \in \{1\}$ are independent, the condition $P(x, y) = P(x)P(y)$ must be satisfied for $x=1, y=1$, and $x=2, y=1$.
+
 #### References
 
-[1] "Probability mass function", Wikipedia, [Online] Available: https://en.wikipedia.org/wiki/Probability_mass_function, accessed in Aug. 28th, 2024. \
-[2] "Probability density function", Wikipedia, [Online] Available: https://en.wikipedia.org/wiki/Probability_density_function, accessed in Aug. 28th, 2024.
+$$\tag*{}\label{1} \text{[1] "Probability mass function", Wikipedia, [Online] Available: https://en.wikipedia.org/wiki/Probability_mass_function, accessed in Aug. 28th, 2024.}$$
+$$\tag*{}\label{2} \text{[2] "Probability density function", Wikipedia, [Online] Available: https://en.wikipedia.org/wiki/Probability_density_function, accessed in Aug. 28th, 2024.}$$
 
 #### Appendix
 
