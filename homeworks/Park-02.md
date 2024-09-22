@@ -85,9 +85,9 @@ $\quad$ No, it is not a uniform distribution. The probability of getting "1" is 
 
 **The probability that 3 of these balls are blue.** \
 $\quad$ The probability that 3 of these balls are blue is \
-$\quad\quad$ $\frac{{8 \choose 3} \times {7 \choose 2}}{{15 \choose 5}} = 0.3916$ \
+$\quad\quad$ $\frac{ {8 \choose 3} \times {7 \choose 2} }{{15 \choose 5}} = 0.3916$ \
 **The probability that at most 4 of them are blue marbles.** \
 $\quad$ The probability that at most 4 of them are blue marbles is eqaul to the probability of (1 - the probability that 5 of them are blue marbles) \
-$\quad\quad$ $1 - \frac{{8 \choose 5} \times {7 \choose 0}}{{15 \choose 5}} = 0.9814$ \
+$\quad\quad$ $1 - \frac{ {8 \choose 5} \times {7 \choose 0} }{{15 \choose 5}} = 0.9814$ \
 **Name the distribution** \
 $\quad$ Hypergeometric Distribution
