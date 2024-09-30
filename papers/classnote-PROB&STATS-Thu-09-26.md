@@ -8,8 +8,42 @@ $$
 \end{array}
 $$
 
-Practices
+추가 문제
+1. We have 2 cards. card number 1 is red on both sided. card number 2 is red on one side and black on the other side. We randomly pick a card and see one side is red. What is the chance that the other side is also red?
 
+$$
+\frac{2}{3}
+$$
+It is similar to the problem 망한 문제. 경우의 수 따져서 (4 -> 3 중 ) 푸는 게 빠름
+
+another solution
+$$
+P(rr \mid r) = \frac{P(r \mid rr) \times P(rr)}{P(r)} = \frac{\frac{1}{2}}{\frac{3}{4}} = \frac{2}{3} \\
+\begin{aligned}
+\from & P(r \mid rr) \times P(rr) + P(r \mid rb) \times P(rb) = P(r) \\
+& 1 \times \frac{1}{2} + \frac{1}{2} \times \frac{1}{2} = \frac{3}{4}
+\end{aligned}
+$$
+
+2. Alice and Bob can finish a job in 2 hours, Alice and Charlie can finish a job in 3 hours, Bob and Charlie can finish a job in 4 hours. If 3 of them work together, how long does it take to finish the job?
+
+$$
+A + B = \frac{1}{2} \\
+A + C = \frac{1}{3} \\
+B + C = \frac{1}{4} \\
+\to 2A + 2B + 2C = \frac{13}{12} \\
+\to A + B + C = \frac{13}{24} \\
+\to \frac{24}{13} = \text{1 hour 51 minutes}
+$$
+
+3. You are a prisoner sentenced to death. Emperor gives you chance to live by playing a simple game. 50 black marbles and 50 white marbles are placed with 2 empty bowls. You can divide the marbles into 2 bowls as you like. Then you will be blindfolded and the bowls will be shuffled. You will choose one marble from one bowl. If the marble is white, you will be free. If the marble is black, you will be executed. How do you divide the marbles?
+
+$$
+\text{Equally distributing is only one half} \\
+\text{one white ball in a jar and 49 white balls and 50 black balls in the other jar is the maximum probability to live} \\
+$$
+
+추가 문제
 1.
 
 $$

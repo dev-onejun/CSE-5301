@@ -396,14 +396,14 @@ $$
 
 **Conditioning and Independence of Joint Functions** ([Practice](#mjx-eqn-B))
 
-A formula regarding conditional probability about joint random variables is derived from the basic conditional probability $P(A\|B) = \frac{P(A \cap B)}{P(B)}$:
+A formula regarding conditional probability about joint random variables is derived from the basic conditional probability $P(A \mid B) = \frac{P(A \cap B)}{P(B)}$:
 
 $$
-P_(X \in A \| Y \in B) = \frac{P(X \in A, Y \in B)}{P(Y \in B)}, \text{where } C,D \subset R \\
+P_(X \in A \mid Y \in B) = \frac{P(X \in A, Y \in B)}{P(Y \in B)}, \text{where } C,D \subset R \\
 \begin{array}{c|c}
 \text{Condtional PMF} & \text{Condtional CDF} \\
 \hline
-P_{X \| A}(x_i) = P(X = x_i \| A) = \frac{P(X = x_i, A)}{P(A)} & F_{X \| A}(x) = P(X \leq x \| A) = \frac{P(X \leq x, A)}{P(A)}
+P_{X \mid A}(x_i) = P(X = x_i \mid A) = \frac{P(X = x_i, A)}{P(A)} & F_{X \mid A}(x) = P(X \leq x \mid A) = \frac{P(X \leq x, A)}{P(A)}
 \end{array}
 $$
 
@@ -417,8 +417,8 @@ Conditional expectation is also similari to ordinary expectation. The only diffe
 
 $$
 \begin{aligned}
-& E(X \| A) = \sum_{x_i \in R_X} x_i P_{X \| A}(x_i) \\
-& E(X \| Y = y_i) = \sum_{x_i \in R_X} x_i P_{X \| Y}(x_i \| y_i) \text{ given that the probability of } Y \text{ is observed, the conditional expectation of } X \text{ is calculated}
+& E(X \mid A) = \sum_{x_i \in R_X} x_i P_{X \mid A}(x_i) \\
+& E(X \mid Y = y_i) = \sum_{x_i \in R_X} x_i P_{X \mid Y}(x_i \mid y_i) \text{ given that the probability of } Y \text{ is observed, the conditional expectation of } X \text{ is calculated}
 \end{aligned}
 $$
 
@@ -428,8 +428,8 @@ Recall that the partition is a set of events that are mutually exclusive. The la
 
 $$
 \begin{aligned}
-& P(A) = \sum_{i} P(A \cap B_i) = \sum_{i} P(A \| B_i)P(B_i) \\
-& E(X) = \sum_{i} E(X \| A_i)P(A_i)
+& P(A) = \sum_{i} P(A \cap B_i) = \sum_{i} P(A \mid B_i)P(B_i) \\
+& E(X) = \sum_{i} E(X \mid A_i)P(A_i)
 \end{aligned}
 $$
 
@@ -463,6 +463,75 @@ The joint CDF is defined as $F_{XY}(x, y) = P(X \leq x, Y \leq y)$ with the foll
 - $P( X1 \leq x \leq X2, Y1 \leq y \leq Y2) = F_{XY}(x2, y2) - F_{XY}(x1, y2) - F_{XY}(x2, y1) + F_{XY}(x1, y1)$
 - If $X$ and $Y$ are independent, then $F_{XY}(x, y) = F_X(x) \cdot F_Y(y)$
 
+##### G. Conditioning for Continuous Random Variables
+
+Conditional probability for discrete random variables was discussed in the previous section *A*. Similar to other transition from discrete to continuous random variables, the concept of conditional probability for continuous random variables also work with PDFs from PMFs.
+
+**Conditional PDFs and CDFs in Continuous Random Variables** ([Practice](#mjx-eqn-G))
+
+Suppose an event $A$ is defined with a continuous random variable $X$ in the interval $[a,b]$. A conditional PDF and CDF of $X$ and $X$'s conditional expectation and variance are as follows:
+
+$$
+\begin{array}{c|c}
+\text{Conditional PDF} & \text{Conditional CDF} \\
+\hline
+f_{X \mid A} (x) = \begin{cases} \frac{f_{X}(x)}{P(A)} & \text{if } a \leq x \leq b \\ 0 & \text{otherwise} \end{cases}
+&
+F_{X \mid A}(x) = \begin{cases} 0 & \text{if } x < a \\ \int_{a}^{b} f_{X \mid A}(x) dx = \frac{F_X(x) - F_X(a)}{F_X(b) - F_X(a)} & \text{if } a \leq x \leq b \\ 1 & \text{if } x > b \end{cases}
+\end{array}
+$$
+
+$$
+\begin{array}{c|c}
+\text{Expectation} & \text{Variance} \\
+\hline
+E[X \mid A] = \int_{- \infty}^{\infty} x f_{X \mid A} (x) dx & Var(X \mid A) = E[X^2 \mid A] - \left( E[X \mid A] \right)^2 \\
+E[g(X) \mid A] = \int_{- \infty}^{\infty} g(x) f_{X \mid A} (x) dx
+\end{array}
+$$
+
+**Conditioning by Another Random Variable** ([Practice](#mjx-eqn-H))
+
+For two jointly continuous random variables $X$ and $Y$ with their joint PDF $f_{XY}(x,y)$, the conditional PDF and CDF of $X$ given $Y = y$ are as follows:
+
+$$
+\begin{array}{c|c}
+\text{Conditional PDF} & \text{Conditional CDF} \\
+\hline
+f_{X \mid Y} (x \mid y) = \frac{f_{XY}(x,y)}{f_Y(y)} & F_{X \mid Y}(x \mid y) = P(X \leq x \mid Y = y) = \int_{-\infty}^{x} f_{X \mid Y}(x \mid y) dx
+\end{array}
+$$
+
+**Conditional Expectation and Variance in Continuous Random Variables** ([Practice](#mjx-eqn-I))
+
+For two jointly continuous random variables $X$ and $Y$ with their joint PDF $f_{XY}(x,y)$, the conditional expectation and variance of $X$ given $Y = y$ are:
+
+$$
+\begin{array}{c|c}
+\text{Expectation} & \text{Variance} \\
+\hline
+E[X \mid Y = y] = \int_{- \infty}^{\infty} x f_{X \mid Y} (x \mid y) dx & Var(X \mid Y = y) = E[X^2 \mid Y = y] - \left( E[X \mid Y = y] \right)^2
+\end{array}
+$$
+
+**Independent Random Variables in Continuous Random Variables** ([Practice](#mjx-eqn-J))
+
+When two jointly continuous random variables $X$ and $Y$ are independent, the following formulas are true:
+
+$$
+f_{X,Y}(x,y) = f_X(x) f_Y(y) \quad \text{for all } x,y \\
+E[XY] = E[X]E[Y]
+$$
+
+**Involved Functions in Continuous Random Variables** ([Practice](#mjx-eqn-K))
+
+When it comes to the expectation and variance of the function which involves two rando variables $X$ and $Y$, the following formulas are true:
+
+$$
+E[g(X,Y)] = \int \int g(x,y) f_{X,Y}(x,y) dx dy \\
+Var(g(X,Y)) = E[g(X,Y)^2] - \left( E[g(X,Y)] \right)^2
+$$
+
 #### References
 
 $$\tag*{}\label{1} \text{[1] "Probability mass function", Wikipedia, [Online] Available: https://en.wikipedia.org/wiki/Probability_mass_function, accessed in Aug. 28th, 2024.}$$
@@ -470,7 +539,7 @@ $$\tag*{}\label{2} \text{[2] "Probability density function", Wikipedia, [Online]
 
 #### Appendix
 
-##### Practices
+#### Practices
 
 $$\tag*{}\label{A} \mathbf{\text{A. Joint Cumulative Distribution Function}}$$
 
@@ -787,5 +856,180 @@ F_X(x) & = \begin{cases} 0 & x \lt 0 \\ x & 0 \leq x \leq 1 \\ 1 & x \gt 1 \end{
 F_Y(y) & = \begin{cases} 0 & y \lt 0 \\ y & 0 \leq y \leq 1 \\ 1 & y \gt 1 \end{cases} \\
 \hline
 F_{XY}(x, y) & = \begin{cases} 0 & x \lt 0, y \lt 0 \\ x \cdot y & 0 \leq x, y \leq 1 \\ x & 0 \leq x \leq 1, y \gt 1 \\ y & x \gt 1, 0 \leq y \leq 1 \\ 1 & x \gt 1, y \gt 1 \end{cases}
+\end{aligned}
+$$
+
+$$\tag*{}\label{G} \mathbf{\text{G. Conditional PDFs and CDFs in Continuous Random Variables}}$$
+
+**a. Let $X$ ~ Exponential(1). ($\lambda e^{-\lambda x} = e^{-x}$)** \
+**a-1. Find Conditional PDF of $X$ given $X > 1$.**
+
+$$
+\begin{array}{c|c}
+f_{X \mid A} (x) = \frac{f_X(x)}{P(A)}
+&
+\begin{aligned}
+& P(A) = \int_{1}^{\infty} e^{-x} dx = \left. -e^{-x} \right|_{1}^{\infty} = e^{-1} \\
+& \to f_{X \mid A} (x) = \frac{e^{-x}}{e^{-1}} = e^{-x+1}
+\end{aligned}
+\end{array}
+$$
+
+**a-2. Find $E[X \mid X > 1]$.**
+
+$$
+\begin{array}{c|c}
+\int_{- \infty}^{\infty} x f_{X \mid A} (x) dx
+&
+\begin{aligned}
+E[X \mid X > 1] & = \int_{1}^{\infty} x e^{-x+1} dx = e \int_{1}^{\infty} x e^{-x} dx \\
+& = e \left| -x e^{-x} + e^{-x} \right|_{1}^{\infty} \\
+& = 2
+\end{aligned} \\
+\hline
+\end{array} \\
+\int f(x)g(x) dx = f(x)G(x) - \int f'(x)G(x) dx + C
+$$
+
+**a-3. Find $Var(X \mid X > 1)$ = $E[X^2 \mid X > 1] - \left( E[X \mid X > 1] \right)^2$**
+
+$$
+\begin{aligned}
+\int_{1}^{\infty} x^2 e^{-x+1} dx & = e \int_{1}^{\infty} x^2 e^{-x} dx \\
+& = e \left| x^2 (-e^{-x}) - \int 2x (-e^{-x}) dx \right|_{1}^{\infty} \\
+& \left( \begin{aligned}
+& \int 2x (-e^{-x}) dx = 2x e^{-x} - 2 \int e^{-x} dx \\
+& \int e^{-x} dx = \left| -e^{-x} \right|_{1}^{\infty} \\
+\end{aligned} \right) \\
+& = e \left| x^2 (-e^{-x}) - 2x e^{-x} - 2e^{-x} \right|_{1}^{\infty} \\
+& = 5 \\
+Var(X \mid X > 1) & = 5 - 2^2 = 1
+\end{aligned}
+$$
+
+$$\tag*{}\label{H} \mathbf{\text{H. Conditioning by Another Random Variable}}$$
+
+**a. Let $X$ and $Y$ be two jointly continuous random variables with the joint PDF given below.** \
+
+$$
+f_{XY}(x,y) = \begin{cases} \frac{x^2}{4} + \frac{y^2}{4} + \frac{xy}{6} & 0 \leq x \leq 1, 0 \leq y \leq 2 \\ 0 & \text{otherwise} \end{cases}
+$$
+
+**a-1. Find conditional PDF of $X$ given $Y=y$.**
+
+$$
+\begin{array}{c|c}
+f_{X \mid Y} (x \mid y) = \frac{f_{XY}(x,y)}{f_Y(y)}
+&
+\begin{aligned}
+f_Y(y) & = \int_{0}^{1} f_{XY}(x,y) dx \\
+& = \int_{0}^{1} \left( \frac{x^2}{4} + \frac{y^2}{4} + \frac{xy}{6} \right) dx \\
+& = \left. \frac{x^3}{12} + \frac{y^2}{4}x + \frac{xy}{6} \right|_{0}^{1} \\
+& = \frac{1}{12} + \frac{y^2}{4} + \frac{y}{6} \\
+& = \frac{3y^2 + y + 1}{12}
+\end{aligned} \\
+\hline
+\end{array} \\
+\begin{aligned}
+& f_Y(y) = \begin{cases} \frac{3y^2 + y + 1}{12} & 0 \leq y \leq 2 \\ 0 & \text{otherwise} \end{cases} \\
+\to & f_{X \mid Y} (x \mid y) = \frac{\frac{x^2}{4} + \frac{y^2}{4} + \frac{xy}{6}}{\frac{3y^2 + y + 1}{12}}
+\end{aligned}
+$$
+
+**a-2. Find $P(X \lt \frac{1}{2} \mid Y = y)$.**
+
+$$
+\begin{aligned}
+P(X \lt \frac{1}{2} \mid Y = y) & = \int_{0}^{\frac{1}{2}} f_{X \mid Y} (x \mid y) dx \\
+& = \int_{0}^{\frac{1}{2}} \frac{\frac{x^2}{4} + \frac{y^2}{4} + \frac{xy}{6}}{\frac{3y^2 + y + 1}{12}} dx \\
+& = \frac{1}{3y^2 + y + 1} \int_{0}^{\frac{1}{2}} \frac{x^2}{4} + \frac{y^2}{4} + \frac{xy}{6} dx \\
+& = \frac{1}{3y^2 + y + 1} \left. x^3 + 3y^2 x + x^2 y \right|_{0}^{\frac{1}{2}} \\
+& = \frac{1}{3y^2 + y + 1} \left( \frac{1}{8} + \frac{3y^2}{2} + \frac{y}{4} \right) \\
+& = \frac{\frac{3}{2} y^2 + \frac{y}{4} + \frac{1}{8}}{3y^2 + y + 1}
+\end{aligned}
+$$
+
+$$\tag*{}\label{I} \mathbf{\text{I. Conditional Expectaion and Variance in Continuous Random Variables}}$$
+
+**a. Let $X$ and $Y$ be the same as the previous problem H.a.** \
+**a-1. Find $E[X \mid Y = 1]$ and $Var(X \mid Y = 1)$.**
+
+$$
+\begin{array}{c|c}
+\begin{aligned}
+E[X \mid Y = 1] & = \int_{0}^{1} x f_{X \mid Y} (x \mid 1) dx \\
+& = \int_{0}^{1} x \left| \frac{3x^2 + 3y^2 + 2xy}{3y^2 + y + 1} \right|^{y=1} dx \\
+& = \int_{0}^{1} x \left( \frac{3x^2 + 3 + 2x}{5} \right) dx \\
+& = \frac{1}{5} \left| \frac{3}{4} x^4 + \frac{3}{2} x^2 + \frac{2}{3} x^3 \right|_{0}^{1} \\
+& = \frac{1}{5} \times \frac{9 + 18 + 8}{12} \\
+& = \frac{7}{12}
+\end{aligned}
+&
+\begin{aligned}
+Var(X \mid Y = 1) & = E[X^2 \mid Y = 1] - \left( E[X \mid Y = 1] \right)^2 \\
+\\
+\qquad \text{i. } E[X^2 \mid Y = 1] & = \int_{0}^{1} x^2 \left( \frac{3x^2 + 3 + 2x}{5} \right) dx \\
+& = \frac{21}{50} \\
+\qquad \text{ii. } Var(X \mid Y = 1) & = \frac{21}{50} - \left( \frac{7}{12} \right)^2 \\
+& = \frac{287}{3600}
+\end{aligned}
+\end{array}
+$$
+
+$$\tag*{}\label{J} \mathbf{\text{J. Independent Random Variables}}$$
+
+**a. Determine if $X$ and $Y$ are independent if their joint PDF is given below.**
+
+$$
+f_{XY}(x,y) = \begin{cases} 8xy & 0 \leq x \leq y \leq 1 \\ 0 & \text{otherwise} \end{cases}
+$$
+
+**a-1. Find $f_X(x)$ and $f_Y(y)$.**
+
+$$
+\begin{array}{c|c}
+\begin{aligned}
+f_X(x) & = \int_{x}^{1} 8xy dy \\
+& = 4x - 4x^3
+\end{aligned}
+&
+\begin{aligned}
+f_Y(y) & = \int_{0}^{y} 8xy dx \\
+& = 4y^3
+\end{aligned} \\
+\hline
+f_X(x) = \begin{cases} 4x - 4x^3 & 0 \leq x \leq 1 \\ 0 & \text{otherwise} \end{cases}
+&
+f_Y(y) = \begin{cases} 4y^3 & 0 \leq y \leq 1 \\ 0 & \text{otherwise} \end{cases}
+\end{array}
+$$
+
+**a-2. Is it independent?**
+
+$$
+8xy \neq (4x - 4x^3)(4y^3) \quad \text{for all } x,y
+$$
+
+$\qquad$ No, they are not independent.
+
+$$\tag*{}\label{K} \mathbf{\text{K. Independent Random Variables}}$$
+
+**a. Let $X$ and $Y$ be two jointly continuous random variables with the joint PDF given below.** \
+
+$$
+f_{XY}(x,y) = \begin{cases} x + y & 0 \leq x, y \leq 1 \\ 0 & \text{otherwise} \end{cases}
+$$
+
+**a-1. Find $E[XY^2]$.**
+
+$$
+\begin{aligned}
+E[XY^2] & = \int_{- \infty}^{\infty} \int_{- \infty}^{\infty} x y^2 f_{XY}(x,y) dx dy \\
+& = \int_{0}^{1} \int_{0}^{1} x y^2 (x + y) dx dy \\
+& = \int_{0}^{1} \int_{0}^{1} x^2 y^2 + xy^3 dx dy \\
+& = \int_{0}^{1} \left| \frac{x^3 y^2}{3} + \frac{x^2 y^3}{3} \right|_{0}^{1} dy \\
+& = \int_{0}^{1} \frac{y^2}{3} + \frac{y^3}{2} dy \\
+& = \left| \frac{y^3}{9} + \frac{y^4}{8} \right|_{0}^{1} \\
+& = \frac{17}{72}
 \end{aligned}
 $$
