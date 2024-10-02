@@ -333,7 +333,7 @@ The gamma distribution is a two-parameter family of continuous probability distr
 In order to define the gamma distribution, the gamma function is priorly needed. The gamma function $\Gamma(x)$ is defined with the following five characteristics for any positive real number $\alpha$:
 
 $\text{1. } \Gamma(\alpha) = \int_{0}^{\infty} x^{\alpha-1}e^{-x}dx, \quad \alpha > 0$ \
-$\text{2. } \int_{0}^{\infty} x^{\alpha-1}e^{\lambda x}dx = \frac{\Gamma(\alpha)}{\lambda^{\alpha}}, \quad \alpha > 0, \lambda > 0$ \
+$\text{2. } \int_{0}^{\infty} x^{\alpha-1}e^{- \lambda x}dx = \frac{\Gamma(\alpha)}{\lambda^{\alpha}}, \quad \alpha > 0, \lambda > 0$ \
 $\text{3. } \Gamma(\alpha+1) = \alpha\Gamma(\alpha), \quad \alpha > 0$ \
 $\text{4. } \Gamma(n) = (n-1)!, \quad n \in \mathbb{N}$ \
 $\text{5. } \Gamma\left(\frac{1}{2}\right) = \sqrt{\pi}$
