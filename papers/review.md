@@ -545,6 +545,8 @@ $$\tag*{}\label{A} \mathbf{\text{A. Joint Cumulative Distribution Function}}$$
 
 **a. Let $X$~Bernoulli($p$) and $Y$~Bernoulli($q$) are independent. Find joint PMF and joint CDF for $X$ and $Y$.**
 
+Note that $P(X=0) = 1-p, P(X=1) = p, P(Y=0) = 1-q, P(Y=1) = q$.
+
 $$
 R_{XY} = \{(0,0), (0,1), (1,0), (1,1)\}, R_X = \{0,1\}, R_Y = \{0,1\} \\
 F_{XY}(x, y) = F_X(x) \cdot F_Y(y)
