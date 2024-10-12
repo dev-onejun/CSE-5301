@@ -84,21 +84,25 @@ Normally, *random variables* are categorized as four types: **1)** *Propositiona
 *Propositional* random variables are the simplest type of *random variables*. It is defined as a *random variable* that can take only two values, true or false. For instance, whether it will rain tomorrow or not is a *propositional* random variable. This boolean type of *random variable* follows the axioms below.
 
 $$
-P(A) \in [0, 1] \\
-P(\text{true}) = 1, P(\text{false}) = 0 \\
-P(A \cup B) = P(A) + P(B) - P(A \cap B) \\
-P(A \cap B) = P(A) \cdot P(B|A) \\
-P(A) + P(\neg A) = 1
+\begin{aligned}
+& P(A) \in [0, 1] \\
+& P(\text{true}) = 1, P(\text{false}) = 0 \\
+& P(A \cup B) = P(A) + P(B) - P(A \cap B) \\
+& P(A \cap B) = P(A) \cdot P(B|A) \\
+& P(A) + P(\neg A) = 1
+\end{aligned}
 $$
 
 *Multivalued* random variables are the *random variables* that can take more than two values. For example, the result of a dice roll is a *multivalued* random variable. The probability of the event that the result of the dice roll is 4 is $P(A) = {1 \over 6}$. The axioms of *multivalued* random variables are as follows.
 
 $$
-P(A = a_i) \in [0, 1] \\
-P(S) = 1, P(\emptyset) = 0 \\
-P(A \cup B) = P(A) + P(B) - P(A \cap B) \\
-P(A \cap B) = P(A) \cdot P(B|A) \\
-\sum_{i=1}^{n} P(A = a_i) = 1
+\begin{aligend}
+& P(A = a_i) \in [0, 1] \\
+& P(S) = 1, P(\emptyset) = 0 \\
+& P(A \cup B) = P(A) + P(B) - P(A \cap B) \\
+& P(A \cap B) = P(A) \cdot P(B|A) \\
+& \sum_{i=1}^{n} P(A = a_i) = 1
+\end{aligned}
 $$
 
 *Discrete (Real-valued)* random variables are the *random variables* that can take countable number of values. For example, the number of students in a class is a *discrete real-valued* random variable.
