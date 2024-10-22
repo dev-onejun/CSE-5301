@@ -536,6 +536,74 @@ E[g(X,Y)] = \int \int g(x,y) f_{X,Y}(x,y) dx dy \\
 Var(g(X,Y)) = E[g(X,Y)^2] - \left( E[g(X,Y)] \right)^2
 $$
 
+##### H. Information Theory
+
+$\quad$ Information Theory, established by Claude Shannon in the 1940s, addresses how much information is contained in a particular event or message, assuming that the event or message is random. The information content $I(p)$ where $p$ is the probability of the event, has the following properties: \
+$\quad 1.$ $I(p) \geq 0$ for all $p$: Information can not be negative \
+$\quad 2.$ $I(1) = 0$: An event that has probability 1 does not contain any information \
+$\quad 3.$ $I(p_1 \cdot p_2) = I(p_1) + I(p_2)$: The information content of two independent events is the sum of the information content of each event \
+$\quad 4.$ $I(p) = -\log_b(p)$: Based on the properties above, the measurement of information content can be defined \
+$\quad\quad$ - The unit of information is depended on the base $b$ of the logarithm: \
+$\quad\quad\quad \cdot$ $b=2$: bits, the most common base (default) \
+$\quad\quad\quad \cdot$ $b=3$: trits \
+$\quad\quad\quad \cdot$ $b=e$: nats \
+$\quad\quad\quad \cdot$ $b=10$: Hartleys
+
+$\quad$ The entropy $H(X)$ is the expected value of the information content of a random variable $X$ and is defined as
+
+$$
+\begin{aligned}
+H(X) & = E \left[ I(X) \right] \\
+& = - \sum_{i=1}^{n} p(x_i) \log_b(p(x_i))
+\end{aligned}
+$$
+
+The entropy $H(X)$ reaches its maximum value when the probability distribution is uniform.
+
+$\quad$ **Relative Entropy** is a measure of the difference between two probability distributions $p$ and $q$;
+
+$$
+D(p \mid\mid q) = E_p \left[ \log_b \frac{p(x)}{q(x)} \right] = \sum_{x} p(x) \log_b \frac{p(x)}{q(x)}
+$$
+
+Both distributions must be over the same domain. The value of **relative entropy** is always non-negative and zero if and only if $p$ and $q$ are the same.
+
+$\quad$ The **joint entropy** $H(X,Y)$ is the expected value of the information content of two random variables $X$ and $Y$ and is defined as the following equation with three properties:
+
+$$
+\begin{aligned}
+H(X,Y) & = E \left[ -\log_b P(X,Y) \right] \\
+& = -\sum_x \sum_y P(X=x,Y=y) \log_b P(X=x,Y=y)
+\end{aligned}
+$$
+
+$\quad 1.$ $H(X,Y) \geq max(H(X), H(Y))$ \
+$\quad 2.$ $H(X,Y) \leq H(X) + H(Y)$ \
+$\quad 3.$ $H(X,Y) = H(X) + H(Y)$ if and only if $X$ and $Y$ are independent.
+
+$\quad$ **Condition Entropy** $H(X \mid Y)$ gives the amount of gained information through $Y$ when $X$ is known.
+
+$$
+\begin{aligned}
+H(X \mid Y) & = H(X,Y) - H(Y) \\
+& = - \sum_x \sum_y P(X=x,Y=y) \log_b P(X=x \mid Y=y) \\
+& = - \sum_x \sum_y P(X=x,Y=y) \log_b P(X=x, Y=y) + \sum_y P(Y=y) \log_b P(Y=y)
+\end{aligned}
+$$
+
+$\quad$ **Mutual Information** $I(X,Y)$ is
+
+$$
+\begin{aligned}
+I(X,Y) & = H(X) - H(X \mid Y) \\
+& = H(Y) - H(Y \mid X) \\
+& = H(X) + H(Y) - H(X,Y)
+\end{aligned}
+$$
+
+
+
+
 #### References
 
 $$\tag*{}\label{1} \text{[1] "Probability mass function", Wikipedia, [Online] Available: https://en.wikipedia.org/wiki/Probability_mass_function, accessed in Aug. 28th, 2024.}$$
