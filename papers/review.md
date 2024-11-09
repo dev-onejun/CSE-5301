@@ -601,7 +601,51 @@ I(X,Y) & = H(X) - H(X \mid Y) \\
 \end{aligned}
 $$
 
+##### I. ...
 
+##### I. Hypothesis Testing
+
+$\quad$ Hypothesis testing is a statistical method to make inferences or draw conclusions about a population based on a sample of data. This leads to determine whether there is enough evicence in the sample data to support a certain claim or hypothesis about the population. A basic outline of the process is fixed as follows:
+
+$\qquad$ 1. Define the null hypothesis $H_0$ and the alternative hypothesis $H_1$. \
+$\qquad\qquad$ - The null hypothesis represents the default or no-effect assumption. \
+$\qquad\qquad$ - The alternative represents a hypothesis aimed to support \
+$\qquad\qquad \bullet$ **Left-tailed test** when $H_1$: $M \lt M_0$ where $M$ refers to a sample mean and $M_0$ is represented a given population mean \
+$\qquad\qquad \bullet$ **Right-tailed test** when $H_1$: $M \gt M_0$ \
+$\qquad\qquad \bullet$ **Two-tailed test** when $H_1$: $M \neq M_0$ \
+$\qquad\qquad$ - If the sample data belongs to the tail region, accept $H_1$. \
+$\qquad$ 2. Choose a significance level $\alpha$ to determine the critical region, default as 0.05 (5%) \
+$\qquad$ 3. Calculate the test statistic and p-value \
+$\qquad$ 4. Make a decision based on the p-value and the significance level
+
+$\quad$ Two types of tests are commonly used in hypothesis testing: z-test and t-test.
+
+**Z-test** \
+$\quad$ Z-test is adopted when **1. the samples follow a normal distribution** and **2. the number of the samples are large enough ($\mathbf{n \gt 30}$)**. During the test, the sample variance and the population variance are handled as equal.
+
+cf. $n \lt  30$이더라도 normal distribution 따르면, z-test 사용할 것 ??
+
+**T-test** \
+$\quad$ T-test is used when **1. the distribution of the sample is unknown (the standard deviation of the sample is unknown)** or **2. the number of the samples are small ($\mathbf{5 \leq n \leq 30}$)**. The test introduces a degree of freedom, making the T value as
+
+$$
+T_{n-1} = \frac{\bar{X} - \mu}{\frac{S_n}{\sqrt{n}}} \quad
+\left( S_n = \sqrt{\frac{\sum_{i=1}^{n}(X_i - \bar{X})^2}{n-1}} \right)
+$$
+
+$\qquad \bullet$ **One sample t-test** \
+$\qquad\qquad$ One sample t-test refers to a test to determine whether the sample mean is significantly different from a known or hypothesized population mean. It can be considered as same as the z-test.
+
+$\qquad \bullet$ **Two samples t-test** \
+$\qquad\qquad$ Two samples t-test is used to compare the means of **two independent (different) groups**.
+
+$$
+\sigma_{\bar{X}_1 - \bar{X}_2} = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}} \\
+T_{n_1 + n_2 - 2} = \frac{(\bar{X}_1 - \bar{X}_2) - (\mu_1 - \mu_2)}{\sigma_{\bar{X}_1 - \bar{X}_2}}
+$$
+
+$\qquad \bullet$ **Paired sample t-test** \
+$\qquad\qquad$ Paired sample t-test compares the means of **two related groups** to determine if the difference between them is zero.
 
 
 #### References
